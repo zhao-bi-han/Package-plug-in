@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		html,body{
+			height: 100%;
+		}
+		.body{
+			margin: 0 auto;
+			width: 520px;
+			margin-top: 100px;
+		}
+		.body a{
+			display: block;
+			text-decoration: none;
+			margin-bottom: 10px;
+			padding: 10px;
+			color:#333;
+		}
+		.panle{
+			border: 1px solid #e0e0e0;
+			width: 520px;
+			text-align: center;
+			display: none;
+		}
+		ul{
+			padding: 0;
+			margin: 0;
+		}
+		.panle li{
+			list-style: none;
+			display: inline-block;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="body">
+		<a href="javascript:;" class="btn">表情</a>
+		<div class="panle">
+			<p>表情加载中，请稍后.....</p>
+			<!-- <ul >
+				<li><img src="qq/emoji-1.png" alt=""></li>
+				<li><img src="qq/emoji-2.png" alt=""></li>
+				<li><img src="qq/emoji-3.png" alt=""></li>
+				<li><img src="qq/emoji-4.png" alt=""></li>
+				<li><img src="qq/emoji-5.png" alt=""></li>
+				<li><img src="qq/emoji-6.png" alt=""></li>
+				<li><img src="qq/emoji-7.png" alt=""></li>
+				<li><img src="qq/emoji-8.png" alt=""></li>
+				<li><img src="qq/emoji-9.png" alt=""></li>
+				<li><img src="qq/emoji-10.png" alt=""></li>
+				<li><img src="qq/emoji-11.png" alt=""></li>
+				<li><img src="qq/emoji-12.png" alt=""></li>
+				<li><img src="qq/emoji-13.png" alt=""></li>
+				<li><img src="qq/emoji-14.png" alt=""></li>
+				<li><img src="qq/emoji-15.png" alt=""></li>
+				<li><img src="qq/emoji-16.png" alt=""></li>
+				<li><img src="qq/emoji-17.png" alt=""></li>
+				<li><img src="qq/emoji-18.png" alt=""></li>
+				<li><img src="qq/emoji-19.png" alt=""></li>
+				<li><img src="qq/emoji-20.png" alt=""></li>
+				<li><img src="qq/emoji-21.png" alt=""></li>
+				<li><img src="qq/emoji-22.png" alt=""></li>
+				<li><img src="qq/emoji-23.png" alt=""></li>
+				<li><img src="qq/emoji-24.png" alt=""></li>
+				<li><img src="qq/emoji-25.png" alt=""></li>
+				<li><img src="qq/emoji-26.png" alt=""></li>
+				<li><img src="qq/emoji-27.png" alt=""></li>
+				<li><img src="qq/emoji-28.png" alt=""></li>
+				<li><img src="qq/emoji-29.png" alt=""></li>
+				<li><img src="qq/emoji-30.png" alt=""></li>
+			</ul> -->
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="js/preload.js"></script>
+	<script type="text/javascript">
+		var img=[];
+		for(var i=0;i<30;i++){
+			img[i]="qq/emoji-"+(i+1)+".png";
+		}
+		var len=img.length;
+		$(".btn").click(function(e){
+			e.stopPropagation();
+			$(".panle").show();
+			$.preload(img,{
+				all:function(){
+					var html='';
+					html+="<ul>";
+					for(var i=0;i<len;i++){
+						html+="<li><img src='qq/emoji-"+(i+1)+".png'></li>";
+					}
+					html+="</ul>";
+					setTimeout(function(){
+						$(".panle").html(html);
+					},1500);
+
+				}
+			});		
+
+		});
+		$(document).click(function(){
+			$(".panle").hide();
+		});
+	</script>
+</body>
+</html>

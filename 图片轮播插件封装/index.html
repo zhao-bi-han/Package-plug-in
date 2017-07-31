@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/slider.css">
+</head>
+<body>
+	<div class="body">
+		<img src="img/1.jpg">
+		<img src="img/2.jpg">
+		<img src="img/3.jpg">
+		<ul>
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<a href="javascript:;" class="left"></a>
+		<a href="javascript:;" class="right"></a>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="js/slider.js"></script>
+	<script type="text/javascript">
+	$.slider({
+		imgElement:$(".body img"),
+		liElement:$(".body li"),
+		leftBtn:$(".left"),
+		rightBtn:$(".right"),
+		time:2000
+	})
+</script>
+</body>
+</html>

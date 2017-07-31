@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+	<style type="text/css">
+	    .body{
+	    	text-align: center;
+	    	margin-top: 100px;
+	    }
+		.body img{
+			width: 600px;
+			height: 375px;
+		}
+		a{   
+			display: inline-block;
+			border: 1px solid #e0e0e0;
+			text-decoration: none;
+			padding: 10px 20px;
+			margin-right: 10px;
+			border-radius: 3px;
+			color: #333;
+		}
+	</style>
+</head>
+<body>
+<div class="body">
+	<img src="http://www.bz55.com/uploads/allimg/140425/137-1404250U512.jpg">
+	<p>
+		<a href="javascript:;" data-control="pre" class="btn">上一张</a>
+		<a href="javascript:;" data-control="next" class="btn">下一张</a>
+	</p>
+</div>
+<script type="text/javascript">
+	var img=[
+    'http://www.bz55.com/uploads/allimg/140425/137-1404250U512.jpg',
+    'http://img2.3lian.com/2014/f4/49/d/135.jpg',
+    'http://img2.3lian.com/2014/f4/49/d/129.jpg',
+    'http://img.51tietu.net/upload/www.51tietu.net/2014-6/201406161514308221.jpg'
+	];
+	var index=0;
+	var len=img.length;
+   $(".btn").on('click',function(){
+   	if($(this).data('control')==='pre'){
+       index=Math.max(0,--index);   //index 和0比较，如果小于0呢么index=0，否则index=index,谁大取谁
+   	}else{
+   		index=Math.min(len-1,++index);
+   	}
+   	$(".body img").attr('src',img[index]);
+   });
+</script>
+</body>
+</html>
